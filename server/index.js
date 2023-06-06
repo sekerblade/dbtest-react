@@ -30,12 +30,12 @@ db.connect((err) => {
 //   }
 //   console.log("Privileges granted successfully!");
 // });
-db.query("SELECT * FROM employees", (err, result) => {
-  if (err) {
-    console.log(err);
-  } 
-  console.log(result);
-});
+// db.query("SELECT * FROM employees", (err, result) => {
+//   if (err) {
+//     console.log(err);
+//   } 
+//   console.log(result);
+// });
 
 app.get("/employees", (req, res) => {
     db.query("SELECT * FROM employees", (err, result) => {
@@ -94,6 +94,6 @@ app.delete("/delete/:id", (req, res) => {
   });
 });
 
-// app.listen(3306, () => {
-//     console.log("Yey, your server is running on port 3001");
-// });
+app.listen(3001, () => {
+    console.log("Yey, your server is running on port 3001");
+});
